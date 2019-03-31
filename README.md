@@ -1,3 +1,3 @@
-# Typescript Starter Project
+# Typescript Starter
 
-This project is a starter project for typescript project
+This is the project for Yeoman generator new TypeScript project include Docker ready.

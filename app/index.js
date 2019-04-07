@@ -25,10 +25,22 @@ module.exports = class extends Generator {
     ]).then(answers => {
       // create destination folder
       this.destinationRoot(answers.name);
+      this.spawnCommandSync('git', ['init']);
       this.fs.copyTpl(this.templatePath('**/*'), this.destinationPath(this.destinationRoot()), answers, undefined, {
         globOptions: { dot: true }
       });
-      this.npmInstall();
+      this.npmInstall([
+        '@types/jest',
+        '@types/node',
+        'dotenv',
+        'jest',
+        'pre-commit',
+        'ts-jest',
+        'ts-node-dev',
+        'tslint-eslint-rules',
+        'tslint',
+        'typescript',
+      ], {'save-dev': true});
     });
   }
 };

@@ -8,6 +8,7 @@ This is the project for Yeoman generator new TypeScript project include Docker r
 - Styling config with TSLint, Prettier, EditorConfig
 - Docker and Docker Compose
 - VSCode debug config
+- Git ready with pre-commit script check lintting and build.
 
 ## Installation
 

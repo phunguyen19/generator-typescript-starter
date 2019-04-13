@@ -29,18 +29,10 @@ module.exports = class extends Generator {
       this.fs.copyTpl(this.templatePath('**/*'), this.destinationPath(this.destinationRoot()), answers, undefined, {
         globOptions: { dot: true }
       });
-      this.npmInstall([
-        '@types/jest',
-        '@types/node',
-        'dotenv',
-        'jest',
-        'pre-commit',
-        'ts-jest',
-        'ts-node-dev',
-        'tslint-eslint-rules',
-        'tslint',
-        'typescript',
-      ], {'save-dev': true});
+      this.npmInstall(
+        ['@types/jest', '@types/node', 'dotenv', 'jest', 'pre-commit', 'ts-jest', 'ts-node-dev', 'tslint-eslint-rules', 'tslint', 'typescript'],
+        { 'save-dev': true }
+      );
     });
   }
 };

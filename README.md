@@ -2,7 +2,6 @@
 
 [![npm version](https://badge.fury.io/js/generator-typescript-starter.svg)](https://badge.fury.io/js/generator-typescript-starter)
 [![Build Status](https://travis-ci.org/phunguyen19/generator-typescript-starter.svg?branch=master)](https://travis-ci.org/phunguyen19/generator-typescript-starter)
-[![Coverage Status](https://coveralls.io/repos/github/phunguyen19/generator-typescript-starter/badge.svg?branch=master)](https://coveralls.io/github/phunguyen19/generator-typescript-starter?branch=master)
 
 This is the project for Yeoman generator new minimal starter TypeScript project with common popular configuartion. The aim of this project is saving time of setup a new TypeScript project.
 
@@ -32,12 +31,6 @@ npm install --global generator-typescript-starter
 
 ```
 yo typescript-starter
-```
-
-## Testing
-
-```
-npm test
 ```
 
 ## License

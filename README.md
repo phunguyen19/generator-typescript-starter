@@ -11,7 +11,6 @@ This is the project for Yeoman generator new minimal starter TypeScript project 
 - **Docker** and Docker Compose ready for development and production
 - **VSCode Debug** config ready.
 - **Git** ready including `.gitignore` and `pre-commit` script check code lint and build.
-- Works on all LTS Node.js versions
 
 ## Installation
 

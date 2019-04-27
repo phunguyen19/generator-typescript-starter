@@ -1,15 +1,16 @@
 {
   "name": "<%- name %>",
   "version": "0.0.1",
-  "description": "<%- description %>",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "pre-commit-msg": "echo '\n==== Pre-commit checks... ==== \n'&& exit 0",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --inspect=0.0.0.0:1234 -r dotenv/config src/index.ts",
+    "watch": "ts-node-dev --inspect=0.0.0.0:1234 -r dotenv/config src/index.ts",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "build": "tsc",
-    "start": "ts-node src/"
+    "start": "ts-node src/",
+    "start:dist": "node dist/"
   },
   "pre-commit": [
     "pre-commit-msg",
@@ -17,7 +18,7 @@
     "build"
   ],
   "keywords": [],
-  "author": "<%- author %>",
+  "author": "",
   "license": "MIT",
   "jest": {
     "verbose": true,

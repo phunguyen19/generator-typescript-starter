@@ -7,9 +7,7 @@ it('generate a project sucessfull', () => {
   return helpers
     .run(path.join(__dirname, '../app'))
     .withPrompts({
-      name: 'test-project',
-      description: 'test description',
-      author: 'Test Author <author@email.com>'
+      name: 'test-project'
     })
     .then(function() {
       assert.file([
@@ -31,9 +29,6 @@ it('generate a project sucessfull', () => {
         'tslint.json'
       ]);
       assert.fileContent('README.md', /test-project/);
-      assert.fileContent('README.md', /test description/);
       assert.fileContent('package.json', /"name": "test-project"/);
-      assert.fileContent('package.json', /"description": "test description"/);
-      assert.fileContent('package.json', /"author": "Test Author <author@email.com>"/);
     });
 });

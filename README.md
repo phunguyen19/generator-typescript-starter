@@ -32,6 +32,11 @@ npm install --global generator-typescript-starter
 yo typescript-starter
 ```
 
+| Options       | Value                         | Description                                                                               |
+| ------------- | ----------------------------- | ----------------------------------------------------------------------------------------- |
+| `--framework` | `minimal` (default), `nestjs` | Generate base on framework style. (`minimal` is not a framework, it just stand for basic) |
+| `--name`      | string                        | Project name. If provided, will skip the question about project name                      |
+
 ## License
 
 MIT

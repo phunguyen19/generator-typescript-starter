@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
+    command: npm run watch
+
+  postgres:
+    image: 'postgres'
+    env_file:
+      - .env
+    ports:
+      - 5432:5432
+    volumes:
+        - ./postgres-data:/var/lib/postgresql/data
+        - ./postgres-backups:/app/postgres-backups

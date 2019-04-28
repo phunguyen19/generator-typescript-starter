@@ -6,7 +6,7 @@
   "scripts": {
     "pre-commit-msg": "echo '\n==== Pre-commit checks... ==== \n'&& exit 0",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "ts-node-dev --inspect=0.0.0.0:1234 -r dotenv/config src/index.ts",
+    "watch": "ts-node-dev --inspect=0.0.0.0:1234 -r dotenv-safe/config src/index.ts",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "build": "tsc",
     "start": "ts-node src/",

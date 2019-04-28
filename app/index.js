@@ -13,7 +13,7 @@ module.exports = class extends Generator {
     this.argument('name', { type: String, required: false });
   }
 
-  async start() {
+  start() {
     const framework = this.options.framework || 'minimal';
 
     if (!fs.existsSync(this.templatePath(framework))) {
@@ -31,33 +31,33 @@ module.exports = class extends Generator {
       default: 'typescript-stater-' + +new Date()
     });
 
-    const answers = await this.prompt(questions);
+    this.prompt(questions).then(answers => {
+      const params = Object.assign({}, this.options, answers);
 
-    const params = Object.assign({}, this.options, answers);
+      // create destination folder
+      this.destinationRoot(params.name);
+      this.spawnCommandSync('git', ['init']);
 
-    // create destination folder
-    this.destinationRoot(params.name);
-    this.spawnCommandSync('git', ['init']);
+      this.fs.copyTpl(this.templatePath(`core/**/*`), this.destinationPath(this.destinationRoot()), params, undefined, {
+        globOptions: { dot: true }
+      });
 
-    this.fs.copyTpl(this.templatePath(`core/**/*`), this.destinationPath(this.destinationRoot()), params, undefined, {
-      globOptions: { dot: true }
-    });
+      this.fs.copyTpl(this.templatePath(`${framework}/**/*`), this.destinationPath(this.destinationRoot()), params, undefined, {
+        globOptions: { dot: true }
+      });
 
-    this.fs.copyTpl(this.templatePath(`${framework}/**/*`), this.destinationPath(this.destinationRoot()), params, undefined, {
-      globOptions: { dot: true }
-    });
+      this.npmInstall();
+      this.npmInstall(corePkg);
+      this.npmInstall(coreDevPkg, { 'save-dev': true });
 
-    this.npmInstall();
-    this.npmInstall(corePkg);
-    this.npmInstall(coreDevPkg, { 'save-dev': true });
-
-    switch (framework) {
-      case 'minimal':
-        this.npmInstall(minimalDevPkg, { 'save-dev': true });
-        break;
-      case 'nestjs':
-        this.npmInstall(['pg', 'sequelize', 'sequelize-typescript']);
-        this.npmInstall(['@types/sequelize'], { 'save-dev': true });
-    }
+      switch (framework) {
+        case 'minimal':
+          this.npmInstall(minimalDevPkg, { 'save-dev': true });
+          break;
+        case 'nestjs':
+          this.npmInstall(['pg', 'sequelize', 'sequelize-typescript']);
+          this.npmInstall(['@types/sequelize'], { 'save-dev': true });
+      }
+    })
   }
 };

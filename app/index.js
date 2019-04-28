@@ -10,51 +10,54 @@ module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
     this.argument('framework', { type: String, required: false });
+    this.argument('name', { type: String, required: false });
   }
 
-  start() {
+  async start() {
     const framework = this.options.framework || 'minimal';
 
     if (!fs.existsSync(this.templatePath(framework))) {
-      /* eslint-disable no-console */
-      return console.log(`Only support frameworks: minimal, nestjs`);
-      /* eslint-enable no-console */
+      return this.log(`Only support frameworks: minimal, nestjs`);
     }
 
     this.log('Initializing...');
 
-    this.prompt([
-      {
-        type: 'input',
-        name: 'name',
-        message: 'Project name: ',
-        default: 'typescript-stater-' + +new Date()
-      }
-    ]).then(answers => {
-      // create destination folder
-      this.destinationRoot(answers.name);
-      this.spawnCommandSync('git', ['init']);
+    const questions = [];
 
-      this.fs.copyTpl(this.templatePath(`core/**/*`), this.destinationPath(this.destinationRoot()), answers, undefined, {
-        globOptions: { dot: true }
-      });
-
-      this.fs.copyTpl(this.templatePath(`${framework}/**/*`), this.destinationPath(this.destinationRoot()), answers, undefined, {
-        globOptions: { dot: true }
-      });
-
-      this.npmInstall();
-      this.npmInstall(corePkg);
-      this.npmInstall(coreDevPkg, { 'save-dev': true });
-
-      switch (framework) {
-        case 'minimal':
-          this.npmInstall(minimalDevPkg, { 'save-dev': true });
-          break;
-        case 'nestjs':
-          this.npmInstall(['pg', 'sequelize', 'sequelize-typescript']);
-          this.npmInstall(['@types/sequelize'], { 'save-dev': true });
-      }
+    if (!this.options.name) questions.push({
+      type: 'input',
+      name: 'name',
+      message: 'Project name: ',
+      default: 'typescript-stater-' + +new Date()
     });
+
+    const answers = await this.prompt(questions);
+
+    const params = Object.assign({}, this.options, answers);
+
+    // create destination folder
+    this.destinationRoot(params.name);
+    this.spawnCommandSync('git', ['init']);
+
+    this.fs.copyTpl(this.templatePath(`core/**/*`), this.destinationPath(this.destinationRoot()), params, undefined, {
+      globOptions: { dot: true }
+    });
+
+    this.fs.copyTpl(this.templatePath(`${framework}/**/*`), this.destinationPath(this.destinationRoot()), params, undefined, {
+      globOptions: { dot: true }
+    });
+
+    this.npmInstall();
+    this.npmInstall(corePkg);
+    this.npmInstall(coreDevPkg, { 'save-dev': true });
+
+    switch (framework) {
+      case 'minimal':
+        this.npmInstall(minimalDevPkg, { 'save-dev': true });
+        break;
+      case 'nestjs':
+        this.npmInstall(['pg', 'sequelize', 'sequelize-typescript']);
+        this.npmInstall(['@types/sequelize'], { 'save-dev': true });
+    }
   }
 };

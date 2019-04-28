@@ -1,5 +1,5 @@
-import { Column, Model, Table } from 'sequelize-typescript';
-import { BaseEntity } from 'src/shared/base.entity';
+import { Column, Table } from 'sequelize-typescript';
+import { BaseEntity } from '../shared/base.entity';
 
 @Table
 export class Todo extends BaseEntity<Todo> {

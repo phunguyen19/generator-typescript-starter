@@ -2,7 +2,7 @@
 const fs = require('fs');
 const Generator = require('yeoman-generator');
 
-const corePkg = ['dotenv-save'];
+const corePkg = ['dotenv-safe'];
 const coreDevPkg = ['pre-commit'];
 const minimalDevPkg = ['@types/jest', '@types/node', 'jest', 'ts-jest', 'ts-node-dev', 'tslint-eslint-rules', 'tslint', 'typescript'];
 
@@ -13,7 +13,7 @@ module.exports = class extends Generator {
   }
 
   start() {
-    const framework = this.options.framework || this.options.fr || 'minimal';
+    const framework = this.options.framework || 'minimal';
 
     if (!fs.existsSync(this.templatePath(framework))) {
       /* eslint-disable no-console */
@@ -51,6 +51,9 @@ module.exports = class extends Generator {
         case 'minimal':
           this.npmInstall(minimalDevPkg, { 'save-dev': true });
           break;
+        case 'nestjs':
+          this.npmInstall(['pg', 'sequelize', 'sequelize-typescript']);
+          this.npmInstall(['@types/sequelize'], { 'save-dev': true });
       }
     });
   }

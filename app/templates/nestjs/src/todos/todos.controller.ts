@@ -1,12 +1,5 @@
-import {
-  Controller,
-  Get,
-  Inject,
-  Post,
-  Patch,
-  Put,
-  Delete,
-} from '@nestjs/common';
+// tslint:disable-next-line
+import { Controller, Delete, Get, Inject, Patch, Post, Put } from '@nestjs/common';
 import { TodoService } from './todos.service';
 
 @Controller('todos')

@@ -1,12 +1,5 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  CreatedAt,
-  UpdatedAt,
-  DeletedAt,
-} from 'sequelize-typescript';
+// tslint:disable-next-line
+import { Column, CreatedAt, DataType, DeletedAt, Model, Table, UpdatedAt } from 'sequelize-typescript';
 
 @Table({ underscored: true, timestamps: true, paranoid: true })
 export class BaseEntity<T> extends Model<BaseEntity<T>> {

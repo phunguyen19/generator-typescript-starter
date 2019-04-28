@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
-import { Todo } from 'src/todos/todos.entity';
+import { Todo } from '../todos/todos.entity';
 
 export const databaseProviders = [
   {

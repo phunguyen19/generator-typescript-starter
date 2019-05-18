@@ -18,7 +18,6 @@ it('generate new minimal project successful', () => {
         '.editorconfig',
         '.env',
         '.gitignore',
-        '.npmrc',
         '.prettierrc',
         'docker-compose.yml',
         'Dockerfile.prod',

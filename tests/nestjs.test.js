@@ -19,7 +19,6 @@ it('generate new nestjs project successful', () => {
         '.editorconfig',
         '.env',
         '.gitignore',
-        '.npmrc',
         '.prettierrc',
         'docker-compose.yml',
         'Dockerfile.prod',

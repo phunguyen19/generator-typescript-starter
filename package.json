@@ -1,6 +1,6 @@
 {
   "name": "generator-typescript-starter",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Yeoman generator for new Typescript project",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,7 @@
   "dependencies": {
     "decamelize": "^3.1.1",
     "uppercamelcase": "^3.0.0",
-    "yeoman-generator": "^3.2.0"
+    "yeoman-generator": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",

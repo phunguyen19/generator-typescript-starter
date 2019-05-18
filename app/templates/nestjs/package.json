@@ -1,5 +1,5 @@
 {
-  "name": "taove-service",
+  "name": "<%- name %>",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -24,8 +24,6 @@
     "@nestjs/common": "^6.0.0",
     "@nestjs/core": "^6.0.0",
     "@nestjs/platform-express": "^6.0.0",
-    "class-transformer": "^0.2.2",
-    "class-validator": "^0.9.1",
     "pg": "^7.11.0",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
@@ -47,7 +45,6 @@
     "supertest": "^3.4.1",
     "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
-    "tsconfig-paths": "^3.7.0",
     "tslint": "5.12.1",
     "typescript": "^3.2.4"
   },

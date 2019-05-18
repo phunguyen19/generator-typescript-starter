@@ -5,18 +5,15 @@ services:
     build:
       context: .
     ports:
-      - '3000:${PORT}'
+      - '${PORT}:${PORT}'
     env_file:
       - .env
-    environment:
-      - POSTGRES_PORT=5432
-      - POSTGRES_HOST=postgres
     volumes:
       - ./:/app
     command: npm run start:dev
-    depends_on: 
+    depends_on:
       - postgres
-
+    
   postgres:
     image: 'postgres'
     env_file:

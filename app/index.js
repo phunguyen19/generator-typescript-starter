@@ -38,7 +38,6 @@ module.exports = class extends Generator {
       
       this.spawnCommandSync('git', ['init']);
 
-      this.fs.copyTpl(this.templatePath(`core/**/*`), destination, params, undefined, copyTplOptions);
       this.fs.copyTpl(this.templatePath(`${framework}/**/*`), destination, params, undefined, copyTplOptions);
 
       this.npmInstall();

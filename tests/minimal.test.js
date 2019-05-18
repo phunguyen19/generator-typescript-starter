@@ -2,7 +2,7 @@ const path = require('path');
 const helpers = require('yeoman-test');
 const assert = require('yeoman-assert');
 
-it('generate a project sucessfull', () => {
+it('generate new minimal project successful', () => {
   // The object returned acts like a promise, so return it to wait until the process is done
   return helpers
     .run(path.join(__dirname, '../app'))
@@ -12,7 +12,7 @@ it('generate a project sucessfull', () => {
     .then(function() {
       assert.file([
         '.git/',
-        '.vscode/',
+        '.vscode/launch.json',
         'src/',
         'tests/',
         '.editorconfig',

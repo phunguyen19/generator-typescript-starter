@@ -1,9 +1,4 @@
 import { Sequelize } from 'sequelize-typescript';
-import { Booking } from '../../models/booking.entity';
-import { User } from '../../models/user.entity';
-import { Airline } from '../../models/airline.entity';
-import { Airport } from '../../models/airport.entity';
-import { Flight } from '../../models/flight.entity';
 
 export const databaseProviders = [
   {

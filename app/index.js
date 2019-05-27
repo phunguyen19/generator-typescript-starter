@@ -37,10 +37,19 @@ module.exports = class extends Generator {
       const copyTplOptions = { globOptions: { dot: true } };
       
       this.spawnCommandSync('git', ['init']);
+      this.fs.copyTpl(this.templatePath(`${framework}/files/**/*`), destination, params, undefined, copyTplOptions);
 
-      this.fs.copyTpl(this.templatePath(`${framework}/**/*`), destination, params, undefined, copyTplOptions);
+      let installedPackages;
+      try {
+        installedPackages = require(`./templates/${framework}/installed-packages`);
+      } catch (error) {
+        this.log('No config for install packages');
+      }
 
-      this.npmInstall();
+      if (typeof installedPackages !== 'undefined') {
+        this.npmInstall(installedPackages.dev);
+        this.npmInstall(installedPackages.saveDev, { 'save-dev': true });
+      }
     });
   }
 };

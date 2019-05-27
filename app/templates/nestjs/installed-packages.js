@@ -1,0 +1,30 @@
+module.exports = {
+  dev: [
+    '@nestjs/common',
+    '@nestjs/core',
+    '@nestjs/platform-express',
+    'pg',
+    'reflect-metadata',
+    'rimraf',
+    'rxjs',
+    'sequelize',
+    'sequelize-typescript',
+  ],
+  saveDev: [
+    '@nestjs/testing',
+    '@types/express',
+    '@types/jest',
+    '@types/node',
+    '@types/sequelize',
+    '@types/supertest',
+    'dotenv-safe',
+    'jest',
+    'nodemon',
+    'prettier',
+    'supertest',
+    'ts-jest',
+    'ts-node',
+    'tslint',
+    'typescript',
+  ]
+}

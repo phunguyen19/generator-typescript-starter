@@ -34,7 +34,7 @@ yo typescript-starter [...options]
 
 | Options     |  Default   | Values                        | Description                                                                               |
 | ----------- |  --------- | ----------------------------- | ----------------------------------------------------------------------------------------- |
-| `framework` |  `minimal` | `minimal`, `nestjs`           | Generate base on framework style. (`minimal` is not a framework, it just stand for basic) |
+| `framework` |  `minimal` | `minimal`, `nestjs`, `cli`    | Generate base on framework style. (`minimal` is not a framework, it just stand for basic) |
 | `name`      |            | string                        | Project name. If provided, will skip the question about project name                      |
 
 ## License

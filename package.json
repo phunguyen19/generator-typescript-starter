@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "pre-commit-msg": "echo '\n==== Pre-commit checks... ==== \n'&& exit 0",
-    "test": "snyk test && ava --verbose",
+    "test": "ava --verbose",
+    "test:vulnerable": "snyk test",
     "lint": "eslint **/*.js"
   },
   "repository": {
@@ -14,6 +15,7 @@
   },
   "pre-commit": [
     "pre-commit-msg",
+    "test:vulnerable",
     "test",
     "lint"
   ],

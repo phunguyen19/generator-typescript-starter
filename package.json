@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pre-commit-msg": "echo '\n==== Pre-commit checks... ==== \n'&& exit 0",
-    "test": "snyk test && jest",
+    "test": "snyk test && ava --verbose",
     "lint": "eslint **/*.js"
   },
   "repository": {
@@ -43,9 +43,10 @@
     "yeoman-generator": "^4.0.1"
   },
   "devDependencies": {
+    "ava": "^2.2.0",
     "eslint": "^5.16.0",
-    "jest": "^24.8.0",
     "pre-commit": "^1.2.2",
+    "snyk": "^1.193.0",
     "yeoman-assert": "^3.1.1",
     "yeoman-test": "^1.9.1"
   }

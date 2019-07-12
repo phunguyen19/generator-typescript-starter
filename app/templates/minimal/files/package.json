@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pre-commit-msg": "echo '\n==== Pre-commit checks... ==== \n'&& exit 0",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ava",
     "watch": "ts-node-dev --inspect=0.0.0.0:1234 -r dotenv-safe/config src/index.ts",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "build": "tsc",
@@ -20,14 +20,13 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "jest": {
-    "verbose": true,
-    "moduleFileExtensions": [
-      "js",
-      "ts"
-    ],
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    }
-  }
+  "ava": {
+		"compileEnhancements": false,
+		"extensions": [
+			"ts"
+		],
+		"require": [
+			"ts-node/register"
+		]
+	}
 }

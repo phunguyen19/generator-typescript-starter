@@ -6,14 +6,12 @@
   "scripts": {
     "pre-commit-msg": "echo '\n==== Pre-commit checks... ==== \n'&& exit 0",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "ts-node-dev --inspect=0.0.0.0:1234 -r dotenv-safe/config src/index.ts",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "clean": "rimraf dist/",
     "start": "ts-node src/",
     "start:dist": "node dist/",
     "build": "tsc",
-    "prebuild": "npm run clean",
-    "prelink": "npm run build"
+    "prebuild": "npm run clean"
   },
   "bin": {
     "<%- name %>": "./dist/index.js"
@@ -34,17 +32,5 @@
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     }
-  },
-  "dependencies": {
-    "commander": "^2.20.0",
-    "dotenv-safe": "^6.1.0"
-  },
-  "devDependencies": {
-    "pre-commit": "^1.2.2",
-    "rimraf": "^2.6.3",
-    "ts-node-dev": "^1.0.0-pre.39",
-    "tslint": "^5.16.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.4.5"
   }
 }

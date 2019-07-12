@@ -5,15 +5,17 @@ const Generator = require('yeoman-generator');
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
-    this.argument('framework', { type: String, required: false });
-    this.argument('name', { type: String, required: false });
+    this.argument('template', {  description: 'Template for generating', type: String, required: false });
+    this.argument('name', { description: 'Project name', type: String, required: false });
   }
 
   start() {
-    const framework = this.options.framework || 'minimal';
+    const template = this.options.template || 'minimal';
 
-    if (!fs.existsSync(this.templatePath(framework))) {
-      return this.log(`Only support frameworks: minimal, nestjs`);
+    const templates = fs.readdirSync(this.templatePath());
+
+    if (!templates.includes(template)) {
+      return this.log(`Template "${template}" does not exist. Only support: "${templates.join('", "')}"`);
     }
 
     this.log('Initializing...');
@@ -37,11 +39,11 @@ module.exports = class extends Generator {
       const copyTplOptions = { globOptions: { dot: true } };
       
       this.spawnCommandSync('git', ['init']);
-      this.fs.copyTpl(this.templatePath(`${framework}/files/**/*`), destination, params, undefined, copyTplOptions);
+      this.fs.copyTpl(this.templatePath(`${template}/files/**/*`), destination, params, undefined, copyTplOptions);
 
       let installedPackages;
       try {
-        installedPackages = require(`./templates/${framework}/installed-packages`);
+        installedPackages = require(`./templates/${template}/installed-packages`);
       } catch (error) {
         this.log('No config for install packages');
       }

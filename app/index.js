@@ -41,16 +41,16 @@ module.exports = class extends Generator {
       this.spawnCommandSync('git', ['init']);
       this.fs.copyTpl(this.templatePath(`${template}/files/**/*`), destination, params, undefined, copyTplOptions);
 
-      let installedPackages;
+      let packages;
       try {
-        installedPackages = require(`./templates/${template}/installed-packages`);
+        packages = require(`./templates/${template}/installed-packages`);
       } catch (error) {
         this.log('No config for install packages');
       }
 
-      if (typeof installedPackages !== 'undefined') {
-        this.npmInstall(installedPackages.dev);
-        this.npmInstall(installedPackages.saveDev, { 'save-dev': true });
+      if (typeof packages !== 'undefined') {
+        if (packages.prod && packages.prod.length) this.npmInstall(packages.prod);
+        if (packages.dev && packages.dev.length) this.npmInstall(packages.dev, { 'save-dev': true });
       }
     });
   }

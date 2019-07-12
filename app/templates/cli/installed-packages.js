@@ -1,13 +1,11 @@
 module.exports = {
-  dev: [
+  prod: [
     'commander',
-    'dotenv-safe',
   ],
-  saveDev: [
+  dev: [
     '@types/node',
     'pre-commit',
     'rimraf',
-    'ts-node-dev',
     'tslint',
     'tslint-eslint-rules',
     'typescript',

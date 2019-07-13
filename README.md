@@ -1,15 +1,17 @@
-# Minimal Typescript Starter Generator for Yeoman
+# Typescript Starter generator
 
 [![npm version](https://badge.fury.io/js/generator-typescript-starter.svg)](https://badge.fury.io/js/generator-typescript-starter)
 [![Build Status](https://travis-ci.org/phunguyen19/generator-typescript-starter.svg?branch=master)](https://travis-ci.org/phunguyen19/generator-typescript-starter)
 [![Known Vulnerabilities](https://snyk.io//test/github/phunguyen19/generator-typescript-starter/badge.svg?targetFile=package.json)](https://snyk.io//test/github/phunguyen19/generator-typescript-starter?targetFile=package.json)
 
-This is the project for Yeoman generator new minimal starter TypeScript project with common popular configuration. The aim of this project is saving time of setup a new TypeScript project.
+Saving time to start a new TypeScript projects.
 
 ## Features
 
-- **Styling** config with TSLint, Prettier, EditorConfig
+- **Simple First**: This is built with minimal prompts and options as much as possible but includes popular needed scripts and packages that most cases need to kick start your new project as quick as possible.
+- **Styling** config ready with TSLint, Prettier, EditorConfig
 - **Docker** and Docker Compose ready for development and production
+- **Test** setup ready to go with Ava
 - **VSCode Debug** config ready.
 - **Git** ready including `.gitignore` and `pre-commit` script check code lint and build.
 
@@ -30,13 +32,20 @@ npm install --global generator-typescript-starter
 ## Usage
 
 ```
-yo typescript-starter [...options]
+yo typescript-starter [--template template-name] [--name project-name]
 ```
 
-| Options     |  Default   | Values                        | Description                                                                               |
-| ----------- |  --------- | ----------------------------- | ----------------------------------------------------------------------------------------- |
-| `framework` |  `minimal` | `minimal`, `cli`              | Generate base on framework style. (`minimal` is not a framework, it just stand for basic) |
-| `name`      |            | string                        | Project name. If provided, will skip the question about project name                      |
+## Options
+
+### --name
+
+The name of the folder will be generated. If provided, will skip the question about project name.
+
+### --template
+
+**`minimal`** (default): The simple template with native `http` server and test ready with Ava
+
+**`cli`**: Ready setup for new Node.js CLI applications.
 
 ## License
 

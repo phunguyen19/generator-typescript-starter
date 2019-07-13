@@ -7,8 +7,11 @@ test('generate new minimal project successful', async t => {
   // The object returned acts like a promise, so return it to wait until the process is done
   await helpers
     .run(path.join(__dirname, '../app'))
+    .withOptions({
+      template: 'minimal',
+    })
     .withPrompts({
-      name: 'test-project'
+      name: 'test-project',
     });
     
     assert.file([

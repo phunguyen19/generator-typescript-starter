@@ -11,26 +11,20 @@
     "start": "ts-node src/",
     "start:dist": "node dist/",
     "build": "tsc",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "postbuild": "node scripts/postbuild.js"
   },
   "bin": {
-    "<%- name %>": "./dist/index.js"
+    "<%- name %>": "./dist/index.js",
+    "<%- name %>-dev": "./src/index.ts"
   },
   "pre-commit": [
     "pre-commit-msg",
-    "lint"
+    "lint",
+    "build",
+    "clean"
   ],
   "keywords": [],
   "author": "",
-  "license": "MIT",
-  "jest": {
-    "verbose": true,
-    "moduleFileExtensions": [
-      "js",
-      "ts"
-    ],
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    }
-  }
+  "license": "MIT"
 }

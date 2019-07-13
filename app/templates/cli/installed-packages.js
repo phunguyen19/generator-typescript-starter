@@ -6,8 +6,9 @@ module.exports = {
     '@types/node',
     'pre-commit',
     'rimraf',
-    'tslint',
+    'ts-node',
     'tslint-eslint-rules',
+    'tslint',
     'typescript',
   ]
 }

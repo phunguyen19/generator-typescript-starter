@@ -20,9 +20,7 @@
   },
   "pre-commit": [
     "pre-commit-msg",
-    "lint",
-    "build",
-    "clean"
+    "lint"
   ],
   "keywords": [],
   "author": "",

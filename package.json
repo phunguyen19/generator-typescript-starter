@@ -26,6 +26,9 @@
     "starter-project",
     "docker"
   ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "author": "Richard Nguyen (phu.nguyen19@gmail.com)",
   "license": "MIT",
   "bugs": {

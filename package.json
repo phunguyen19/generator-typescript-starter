@@ -45,10 +45,10 @@
   },
   "devDependencies": {
     "ava": "^2.2.0",
-    "eslint": "^5.16.0",
+    "eslint": "^6.1.0",
     "pre-commit": "^1.2.2",
     "snyk": "^1.193.2",
     "yeoman-assert": "^3.1.1",
-    "yeoman-test": "^1.9.1"
+    "yeoman-test": "^2.0.0"
   }
 }

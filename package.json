@@ -44,7 +44,7 @@
     "yeoman-generator": "^4.6.0"
   },
   "devDependencies": {
-    "ava": "^2.2.0",
+    "ava": "^3.5.1",
     "eslint": "^6.1.0",
     "pre-commit": "^1.2.2",
     "snyk": "^1.297.3",

@@ -1,10 +1,13 @@
 language: node_js
 script:
-  - npm run test:unit 
-  - npm run lint
+- npm run test:unit
+- npm run lint
 node_js:
-  - '8'
-  - '9'
-  - '10'
-  - '11'
-  - '12'
+- '8'
+- '9'
+- '10'
+- '11'
+- '12'
+notifications:
+  slack:
+    secure: hcEGaPV+Hgq5bbSghE+tswcw0GZs+++ByU4xx2LqIlKO0nEI3f+zk2kkCnIGfSzsjolHZcHnjSjan9Wi71ZAiY+ppDkVWHtfKRviKz69HIT3ScsYOa0sk8YA5aeSLsVo2SYbYtZRr7nxHjzCmwm9ix8130rW8RyLEX3Tpx0FexHvcDS9U0MlRq76XtUodZ+S7qO6pbqLUR3YYY556LsBCW0m1RLM9Qb8AwNbX0jfrAEyseHeuHRmZVbrB+440ZHMwZmSu8hem613hV7tq0+16KzseSkoMHg2RVEPJuGo68ohZ9W/LA1NsIW1IMW7mfvOEFoG3SYvPqaduGR7tm5V3XSmJHM6en+khz3pPjzeQXnRc6uxvmuD/iZAtQLr2mZIVY+PGtoVl3bFmRONn74mOr73v7Yok4PcBcZ/nb7exIcmxxPA3OLMpBCm+NS/MPuT93+kRzLsrG50vbbXlonN20h2MqsNpyuiQWHtGGMSXp6WJFpEpsAgrF+pyIkTEHmUMUy78N0pFjI4E2PiOItWuk5fQ+hdsOeLJZqZbeUSjSkZtIB+23U/PXTWthpr1fRvWvrXZoIbONRJzKkKLXRWW0KMmMrZ4b4BW/Tid2G/dzjvqESF/RUl61NvdivzoXKUreEXPqUYURsl8QgXeS+4NfvafM2/PpegQYlQz58pdrQ=

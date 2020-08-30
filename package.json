@@ -39,7 +39,7 @@
   ],
   "dependencies": {
     "decamelize": "^3.2.0",
-    "lodash": "^4.17.17",
+    "lodash": "^4.17.20",
     "mixin-deep": "^2.0.1",
     "set-value": "^3.0.1",
     "uppercamelcase": "^3.0.0",

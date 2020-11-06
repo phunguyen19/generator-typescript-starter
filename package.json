@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pre-commit-msg": "echo '\n==== Pre-commit checks... ==== \n'&& exit 0",
-    "test": "snyk test && npm run test:unit",
+    "test": "npm run test:unit && snyk test",
     "test:unit": "ava --verbose",
     "lint": "eslint **/*.js",
     "snyk-protect": "snyk protect",
@@ -28,6 +28,9 @@
     "starter-project",
     "docker"
   ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "author": "Richard Nguyen (phu.nguyen19@gmail.com)",
   "license": "MIT",
   "bugs": {

@@ -1,12 +1,10 @@
 module.exports = {
   dev: [
     '@types/node',
-    'ava',
-    'dotenv-safe',
-    'pre-commit',
+    '@typescript-eslint/eslint-plugin',
+    '@typescript-eslint/parser',
+    'eslint',
     'ts-node-dev',
-    'tslint',
-    'tslint-eslint-rules',
     'typescript',
   ]
 }

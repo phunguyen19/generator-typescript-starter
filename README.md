@@ -6,7 +6,7 @@
 
 Saving time to start a new TypeScript projects.
 
-## Features
+## Feature
 
 - **Simple First**: This is built with minimal prompts and options as much as possible but includes popular needed scripts and packages that most cases need to kick start your new project as quick as possible.
 - **Styling** config ready with TSLint, Prettier, EditorConfig

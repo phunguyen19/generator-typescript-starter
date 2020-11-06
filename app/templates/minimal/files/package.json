@@ -4,29 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pre-commit-msg": "echo '\n==== Pre-commit checks... ==== \n'&& exit 0",
-    "test": "ava",
-    "watch": "ts-node-dev --inspect=0.0.0.0:1234 -r dotenv-safe/config src/index.ts",
-    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "test script",
     "build": "tsc",
-    "start": "ts-node src/",
-    "start:dist": "node dist/"
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --fix --ext .ts",
+    "start:debug": "ts-node-dev --inspect=0.0.0.0:9229 src/index.ts",
+    "start:dev": "ts-node-dev src/",
+    "start": "node dist/"
   },
-  "pre-commit": [
-    "pre-commit-msg",
-    "lint",
-    "build"
-  ],
   "keywords": [],
   "author": "",
-  "license": "MIT",
-  "ava": {
-		"compileEnhancements": false,
-		"extensions": [
-			"ts"
-		],
-		"require": [
-			"ts-node/register"
-		]
-	}
+  "license": "MIT"
 }

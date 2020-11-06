@@ -4,11 +4,11 @@ module.exports = {
   ],
   dev: [
     '@types/node',
-    'pre-commit',
+    '@typescript-eslint/eslint-plugin',
+    '@typescript-eslint/parser',
+    'eslint',
     'rimraf',
     'ts-node',
-    'tslint-eslint-rules',
-    'tslint',
     'typescript',
   ]
 }

@@ -6,15 +6,6 @@
 
 Saving time to start a new TypeScript projects.
 
-## Feature
-
-- **Simple First**: This is built with minimal prompts and options as much as possible but includes popular needed scripts and packages that most cases need to kick start your new project as quick as possible.
-- **Styling** config ready with TSLint, Prettier, EditorConfig
-- **Docker** and Docker Compose ready for development and production
-- **Test** setup ready to go with Ava
-- **VSCode Debug** config ready.
-- **Git** ready including `.gitignore` and `pre-commit` script check code lint and build.
-
 ## Installation
 
 Install Yeoman if you don't have

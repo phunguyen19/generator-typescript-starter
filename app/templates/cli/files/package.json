@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pre-commit-msg": "echo '\n==== Pre-commit checks... ==== \n'&& exit 0",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --fix --ext .ts",
     "clean": "rimraf dist/",
-    "start": "ts-node src/",
-    "start:dist": "node dist/",
+    "start:dev": "ts-node src/",
+    "start": "node dist/",
     "build": "tsc",
     "prebuild": "npm run clean",
     "postbuild": "node scripts/postbuild.js"
@@ -18,10 +18,6 @@
     "<%- name %>": "./dist/index.js",
     "<%- name %>-dev": "./src/index.ts"
   },
-  "pre-commit": [
-    "pre-commit-msg",
-    "lint"
-  ],
   "keywords": [],
   "author": "",
   "license": "MIT"

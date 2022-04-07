@@ -45,9 +45,9 @@
     "lodash": "^4.17.21",
     "mixin-deep": "^2.0.1",
     "set-value": "^3.0.1",
-    "snyk": "^1.425.4",
+    "snyk": "^1.465.0",
     "uppercamelcase": "^3.0.0",
-    "yeoman-generator": "^4.11.0"
+    "yeoman-generator": "^5.0.0"
   },
   "devDependencies": {
     "ava": "^3.5.1",
